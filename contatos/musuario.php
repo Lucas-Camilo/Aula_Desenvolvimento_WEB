@@ -6,10 +6,10 @@ else $op="";
 if ($op=="")
    {header("Location: index.php"); exit;}
 if ($op=="asu")
-   {print "<p align='center'>Altera��o de Senha</p>
+   {print "<p align='center'>Alteração de Senha</p>
            <form method='post' action='musuario.php?op=aasu'>
 		   <p align='center'>Login
-		   <br>Usu�rio<input type='text' name='usuario'
+		   <br>Usuário<input type='text' name='usuario'
 		               size='8' maxglength='8'>
 		   <br>Senha<input type='password' name='senha'
 		             size='8' maxglength='8'>
@@ -38,7 +38,7 @@ if ($op=="aasu")
 				   array(PDO::ATTR_CURSOR=>PDO::CURSOR_SCROLL));
      $sth->execute();
      if ($sth->rowCount()==0)
-        {print "Usu�rio/senha inv�lidos";
+        {print "Usuário/senha inválidos";
          print "<br><a href='index.php'>Voltar</a>";     
          exit;}
 	 $usuario->setSenha($nsenha);	 
@@ -47,8 +47,8 @@ if ($op=="aasu")
      $sth->execute(array (SHA1($usuario->getSenha()),
                           $usuario->getUsuario()));
 	 if ($sth->rowCount()==0)
-         {print "Altera��o n�o efetivada"; exit;}
-	 print "Altera��o feita";	 
+         {print "Alteração não efetivada"; exit;}
+	 print "Alteração feita";	 
 	}catch(Exception $e){print $e->getMessage(); 
        print "<br><a href='index.php'>Voltar</a>"; exit;}
 	   
@@ -57,10 +57,10 @@ include("vsessao.php");
 if ($_SESSION["cat"]!="00")
    {header("Location: index.php"); exit;}
 if ($op=="iu")
- {print "<p align='center'>Novo Usu�rio</p>
+ {print "<p align='center'>Novo Usuário</p>
          <form method='post' action='musuario.php?op=iiu'>
 		 <p align='center'>
-		 <br>Usu�rio<input type='text' name='usuario'
+		 <br>Usuário<input type='text' name='usuario'
 		             size='8' maxglength='8'>
 		 <br>Nome<input type='text' name='nome'
 		             size='50' maxglength='50'>
@@ -77,9 +77,9 @@ if ($op=="iiu")
   $usuario=new usuario($_POST['usuario'],$_POST['usuario'],
                        $_POST['nome'],$_POST['cat']);
   if ($usuario->getUsuario()=="") 
-      $mensagem.="<br>Usu�rio � obrigat�rio";					   
+      $mensagem.="<br>Usuário é obrigatório";					   
   if ($usuario->getNome()=="") 
-      $mensagem.="<br>Nome � obrigat�rio";
+      $mensagem.="<br>Nome é obrigatório";
   if ($usuario->getCat()=="") 
       $mensagem.="<br>Selecione a categoria";
   if ($mensagem!="")
@@ -95,7 +95,7 @@ if ($op=="iiu")
 	                     SHA1($usuario->getSenha()),
                          $usuario->getNome(),
  						 $usuario->getCat()));
-	print "<br>Usu�rio incluido com sucesso 
+	print "<br>Usuório incluido com sucesso 
 	       <br><a href='sistema.php'>Voltar</a>";					 
    }catch (Exception $e) 
            {print "Erro ".$e->getMessage().
@@ -110,7 +110,7 @@ if($op=="lu")
   $sth=$conec->prepare("SELECT * FROM usuario");
   $sth->execute();
   print "<table border='1'>
-		<tr><td>Usu�rio</td><td>Nome</td><td>Categoria</td></tr>";
+		<tr><td>Usuário</td><td>Nome</td><td>Categoria</td></tr>";
   if($sth->rowCount()==0){print "<tr><td>Nada para listar</td></tr>}";
 						  exit;}
   $linha=$sth->fetch(PDO::FETCH_NUM,PDO::FETCH_ORI_FIRST);
@@ -122,7 +122,7 @@ if($op=="lu")
   print"</TABLE><br><a
 		href='sistema.php'>Voltar</a>";
  }catch(Exception $e){
-		print"<br>Falha: Usuarios n�o listados".$e->getMessage();
+		print"<br>Falha: Usuarios não listados".$e->getMessage();
 		print"<br><a href='sistema.php'>Voltar</a>";
 	 exit;}
 exit;}
@@ -161,10 +161,10 @@ if($op=="eeu")
 	try{$conec->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 		$sth=$conec->prepare("DELETE FROM usuario WHERE usuario=?");
 		$sth->execute(array($usuario->getUsuario()));
-		if($sth->rowCount()==0) print "Usuario n�o excluido";
+		if($sth->rowCount()==0) print "Usuario não excluido";
 		else print "Usuario ".$usuario->getnome()." Ecluido com sucesso";
 		print "<br><a href='sistema.php'>Voltar</a>";
-		}catch(Exception $e){print "<br>Falha: Usu�rio n�o excluido ".$e->getMessage().
+		}catch(Exception $e){print "<br>Falha: Usuário não excluido ".$e->getMessage().
 			"<br><a href='sistema.php'>Voltar</a>";exit;}							
 exit;}
 if($op=="au")
