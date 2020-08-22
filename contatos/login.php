@@ -12,7 +12,7 @@ try
 				   array(PDO::ATTR_CURSOR=>PDO::CURSOR_SCROLL));
  $sth->execute();
  if ($sth->rowCount()==0)
-    {print "Usu·rio/senha inv·lidos";
+    {print "Usu√°rio/senha inv√°lidos";
      print "<br><a href='index.php'>Voltar</a>";     
      exit;}
 $linha=$sth->fetch(PDO::FETCH_NUM, PDO::FETCH_ORI_FIRST);
