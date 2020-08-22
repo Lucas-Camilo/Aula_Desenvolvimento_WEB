@@ -1,10 +1,6 @@
-﻿-- Apaga o banco contatos se existir
-DROP DATABASE IF EXISTS contatos;
--- Cria o banco contatos se não existir
+﻿DROP DATABASE IF EXISTS contatos;
 CREATE DATABASE IF NOT EXISTS contatos;
--- Abre o banco contatos
 USE contatos;
--- Cria a tabela usuario
 CREATE TABLE usuario (
 usuario varchar(08) NOT NULL PRIMARY KEY,
 senha   varchar(60) NOT NULL,
