@@ -188,7 +188,7 @@ if($op=="au")
             do{$ous=new usuario($linha[0],"", $linha[2], $linha[3]);
                 print "<option value='".$ous->getUsuario().
                 "'>".$ous->getNome();
-            }while($linha=sth->fetch(PDO::FETCH_NUM,
+            }while ($linha=$sth->fetch(PDO::FETCH_NUM,
                     PDO::FETCH_ORI_NEXT));
             print "</SELECT <INPUT type='submit' value='Editar'></form>
                     <br><a href='sistema.php'>Voltar</a>";                
