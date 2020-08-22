@@ -231,7 +231,7 @@ if($op=="aeu")
     }catch(PDOException $e)
         {print "<br>Falha: ".$e->getMessage().
                 "<br><a href='sistema.php'>Voltar</a>";
-            exit};
+            exit;}
     exit;}
 if($op=="acu")
 {$ous = new usuario($_POST["usuario"],"",$_POST["nome"],$_POST["cat"]);
