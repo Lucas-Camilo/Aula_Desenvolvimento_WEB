@@ -208,7 +208,7 @@ if($op=="aeu")
                         PDO::CURSOR_SCROLL));
     $sth->execute();
     $linha = $sth->fetch(PDO::FETCH_NUM, PDO::FETCH_ORI_FIRST);
-    $ous= new usuario($linha[0],"",$linha[2, $linha[3]]);
+    $ous= new usuario($linha[0],"",$linha[2], $linha[3]);
     print "<h2>Alteração de usuário</h2>";;
     print "<form method='post'
             action='musuario.php?op=acu'>";
