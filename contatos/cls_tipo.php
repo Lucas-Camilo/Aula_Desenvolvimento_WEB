@@ -1,10 +1,20 @@
-<?php>
-class tipo {
+<?php
+class tipo 
+{
+    private $idt;
     private $nomet;
-
-    function  __construct($v_nomet)
+    function  __construct($v_idt, $v_nomet)
     {
+        $this->idt = $v_idt;
         $this->nomet = $v_nomet;
+    }
+    public function getIdt()
+    {
+        return $this->idt;
+    }
+    public function setIdt($v_idt)
+    {
+        $this->idt = $v_idt;
     }
     public function getNomet()
     {
@@ -16,4 +26,3 @@ class tipo {
     }
 }
 
-<?>

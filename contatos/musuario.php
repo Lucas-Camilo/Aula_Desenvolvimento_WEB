@@ -67,7 +67,6 @@ if ($op == "aasu") {
         print "<br><a href='index.php'>Voltar</a>";
         exit;
     }
-
     exit;
 }
 include("vsessao.php");
@@ -131,7 +130,6 @@ if ($op == "iiu") {
             "<br><a href='sistema.php'>Voltar</a>";
         exit;
     }
-
     exit;
 }
 if ($op == "lu") {
@@ -143,7 +141,7 @@ if ($op == "lu") {
         print "<table border='1'>
 		<tr><td>Usuário</td><td>Nome</td><td>Categoria</td></tr>";
         if ($sth->rowCount() == 0) {
-            print "<tr><td>Nada para listar</td></tr>}";
+            print "<tr><td>Nada para listar</td></tr>";
             exit;
         }
         $linha = $sth->fetch(PDO::FETCH_NUM, PDO::FETCH_ORI_FIRST);
@@ -175,7 +173,7 @@ if ($op == "eu") {
             exit;
         }
         print "<form method='post' action='musuario.php?op=eeu'>
-		 <select name='usuario>
+		 <select name='usuario'>
 		 <option value=''>Selecione para excluir";
         $linha = $sth->fetch(PDO::FETCH_NUM, PDO::FETCH_ORI_FIRST);
         do {

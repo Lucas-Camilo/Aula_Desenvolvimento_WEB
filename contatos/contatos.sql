@@ -31,17 +31,17 @@ VALUES
   ('fc', 'Funcionário');
 
 Tabela contato
-CREATE TABLE IF NOT EXISTS `contato` (
-  `idc` BIGINT NOT NULL AUTO_INCREMENT,
-  `nomec` varchar(60) NOT NULL,
-  `emailc` varchar(60) NOT NULL,
-  `tipoc` varchar(2) NOT NULL,
-  PRIMARY KEY (`idc`),
+CREATE TABLE IF NOT EXISTS contato (
+  idc BIGINT NOT NULL AUTO_INCREMENT,
+  nomec varchar(60) NOT NULL,
+  emailc varchar(60) NOT NULL,
+  tipoc varchar(2) NOT NULL,
+  PRIMARY KEY (idc),
   FOREIGN KEY (tipoc) REFERENCES tipo(idt) ON DELETE CASCADE
 ) DEFAULT CHARSET = latin1;
 
 INSERT INTO
-  `contato` (`idc`, `nomec`, `emailc`, `tipoc`)
+  contato ('idc', 'nomec', 'emailc', 'tipoc')
 VALUES
   (null, 'João', 'joao@gmail.com', 'cm'),
   (null, 'Maria', 'maria@hotmail.com', 'pc'),
