@@ -38,7 +38,7 @@ if ($op == "iit") {
         );
         $sth = $conec->prepare("INSERT INTO tipo values(?, ?)");
         $sth->execute(array(
-            $tipo->getIdt();
+            $tipo->getIdt(),
             $tipo->getNomet()
         ));
         print "<br> Tipo Incluido com sucesso
