@@ -17,7 +17,8 @@
         <a href='mtipo.php?op=at'>Alterar</a>
         <a href='mtipo.php?op=lt'>Listar</a>";
 
-    print "<br><br> <a href='mcontatos.php'>Inclusão de tipo </a>";
+    print "<h2>Contatos</h2>
+            <br> <a href='mcontatos.php?op=ic'>Novo </a>";
     ?>
     <p align="center"><a href="index.php">Logoff</a></p>
 </body>

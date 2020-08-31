@@ -23,11 +23,14 @@ if ($op == "ic") {
                 <br>Email<input type='email' name='email'
 		             size='50' maxglength='50'>
 		<br><select name='tipoc'>
-                       <option value=''>Selecione
-                       <option value='01'>Diretoria
-                       <option value='02'>Chefia
-                       <option value='03'>Subordinado
-                       </select>
+                       <option value=''>Selecione um tipo
+                       <option value='01'>";
+        $linha = $sth->fetch(PDO::FETCH_NUM, PDO::FETCH_ORI_FIRST);
+        do{
+            $ous = new tipo($linha[0], $linha[1]);
+            print "option value='".$ous->getIdt()."'>".$ous->getNomet();
+        }while ($linha = $sth->fetch(PDO::FETCH_NUM, PDO::FETCH_ORI_NEXT));
+                       "</select>
 		<br><input type='submit' value='Incluir'>
         </p></form>";
     } catch (Exception $e) {
