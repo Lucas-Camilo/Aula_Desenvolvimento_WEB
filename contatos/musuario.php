@@ -180,7 +180,7 @@ if ($op == "eu") {
             $ous = new usuario($linha[0], "", $linha[2], $linha[3]);
             if ($ous->getCat() != "00")
                 print "<option value='" . $ous->getUsuario() .
-                    "'>" . $ous->getNome();
+                    "'>" . $ous->getNome()."";
         } while ($linha = $sth->fetch(PDO::FETCH_NUM, PDO::FETCH_ORI_NEXT));
         print "</SELECT<br><input type='submit' value='Excluir'
 		   </form><br><a href='sistema.php'>Voltar</a>";
