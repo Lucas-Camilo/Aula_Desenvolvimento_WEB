@@ -49,6 +49,7 @@ if($op=="iic")
     }
     print $mensagem;
     print "<br><a href='mtipo.php?op=it'>Voltar</a>";
+    $conec = conec::conecta_mysql("localhost", "root", "", "contatos");
     try {
         $conec->setAttribute(
             PDO::ATTR_ERRMODE,
