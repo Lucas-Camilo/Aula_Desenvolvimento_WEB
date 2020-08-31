@@ -42,7 +42,7 @@ if ($op == "ic") {
 if($op=="iic")
 {
     $mensagem = "";
-    $contato = new contatos(null, $_POST['nome'], $_POST['email'], $_POST['tipoc']);
+    $contato = new contatos("", $_POST['nome'], $_POST['email'], $_POST['tipoc']);
     if ($contato->getNomec() == "" || $contato->getEmailc() == ""|| $contato->getTipoc() == "") {
         $mensagem .= "<br>Dados não preenchidos Corretamente";
         exit;
@@ -63,10 +63,10 @@ if($op=="iic")
             $contato->getTipoc()
         ));
         print "<br> Tipo Incluido com sucesso
-            <br><a href='sistema.php'>Voltar</a>";
+            <br><a href='sistema.php'>Voltar para Inserção de Contato</a>";
     } catch (Exception $e) {
         print "Erro" . $e->getMessage() .
-            "<br><a href='sistema.php'>Voltar</a>";
+            "<br><br><a href='sistema.php'>Voltar</a>";
         exit;
     }
     exit;
