@@ -12,7 +12,7 @@ if ($op == "ic") {
     $conec = conec::conecta_mysql("localhost", "root", "", "contatos");
     try {
         $conec->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sth = $conec->prepare("SELECT idt FROM tipo");
+        $sth = $conec->prepare("SELECT 8 FROM tipo");
         $sth->execute();
 
         print "<p align='center'>Incluir Contato</p>    
