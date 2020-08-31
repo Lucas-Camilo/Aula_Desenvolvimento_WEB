@@ -24,12 +24,11 @@ if ($op == "ic") {
                 <br>Email<input type='email' name='email'
 		             size='50' maxglength='50'>
 		<br><select name='tipoc'>
-                       <option value=''>Selecione um tipo
-                       <option value='01'>";
+                       <option value=''>Selecione um tipo";
         $linha = $sth->fetch(PDO::FETCH_NUM, PDO::FETCH_ORI_FIRST);
         do{
             $ous = new tipo($linha[0], $linha[1]);
-            print "option value='".$ous->getIdt()."'>".$ous->getNomet();
+            print "<option value='".$ous->getIdt()."'>".$ous->getNomet();
         }while ($linha = $sth->fetch(PDO::FETCH_NUM, PDO::FETCH_ORI_NEXT));
                        "</select>
 		<br><input type='submit' value='Incluir'>
