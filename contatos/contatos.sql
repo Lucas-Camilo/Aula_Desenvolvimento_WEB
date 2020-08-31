@@ -1,6 +1,6 @@
 ﻿  DROP DATABASE IF EXISTS contatos;
 
-  DATABASE IF NOT EXISTS contatos;
+  CREATE DATABASE IF NOT EXISTS contatos;
 
   USE contatos;
 
