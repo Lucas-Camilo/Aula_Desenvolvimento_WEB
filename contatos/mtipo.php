@@ -36,8 +36,9 @@ if ($op == "iit") {
             PDO::ATTR_ERRMODE,
             PDO::ERRMODE_EXCEPTION
         );
-        $sth = $conec->prepare("INSERT INTO tipo values(?)");
+        $sth = $conec->prepare("INSERT INTO tipo values(?, ?)");
         $sth->execute(array(
+            $tipo->getIdt();
             $tipo->getNomet()
         ));
         print "<br> Tipo Incluido com sucesso
@@ -118,7 +119,7 @@ if ($op == "eet") {
     $volta = "mtipo.php?op=eu";
     $usuario = new tipo($_POST["idt"], "");
     if ($usuario->getNomet() == "") {
-        print "Selecione um tipoo para Excluir";
+        print "Selecione um tipo para Excluir";
         print "<br><a href='sistema.php'>Voltar</a>";
         exit;
     }
