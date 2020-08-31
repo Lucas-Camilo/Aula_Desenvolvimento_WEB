@@ -1,6 +1,6 @@
 <?php
 include("cls_tipo.php");
-include("cls_banco.php");
+include("cl_banco.php");
 if (isset($_GET['op'])) $op = $_GET['op'];
 else $op = "";
 if ($op == "") {
