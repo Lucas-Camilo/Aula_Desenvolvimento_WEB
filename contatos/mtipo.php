@@ -59,7 +59,7 @@ if ($op == "lt") {
         );
         $sth = $conec->prepare("SELECT * FROM tipo");
         $sth->execute();
-        print "table border='1'>
+        print "<table border='1'>
         <tr><td>ID</td><td>Tipo</td</tr>";
         if ($sth->rowCount() == 0) {
             print "<tr><td>Nada para Listar</td></tr>";
@@ -74,7 +74,7 @@ if ($op == "lt") {
             print "<TR><TD>".$ous->getIdt()."</TD>".
             "<TD>" . $ous->getNomet() . "</TD></TR>";
         } while ($linha = $sth->fetch(PDO::FETCH_NUM, PDO::FETCH_ORI_NEXT));
-        print "</TABLE><br>a
+        print "</TABLE><br><a
         href='sistema.php'>Voltar</a>";
     } catch (Exception $e) {
         print "<br>Falha: Usuarios não listados" . $e->getMessage();
