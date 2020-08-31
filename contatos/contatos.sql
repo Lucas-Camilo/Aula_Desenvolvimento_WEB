@@ -12,7 +12,7 @@
   ) ENGINE = MyISAM DEFAULT CHARSET = latin1;
 
   INSERT INTO
-  usuario ('usuario', 'senha', 'nome', 'cat')
+  usuario (usuario, senha, nome, cat)
   VALUES
   ('admin', SHA1('abc'), 'Administrador', '00'),
   ('usu01', SHA1('abc'), 'Usuário 01', '01');
@@ -40,7 +40,7 @@
   ) DEFAULT CHARSET = latin1;
 
   INSERT INTO
-  contato ('idc', 'nomec', 'emailc', 'tipoc')
+  contato (idc, nomec, emailc, tipoc)
   VALUES
   (null, 'João', 'joao@gmail.com', 'cm'),
   (null, 'Maria', 'maria@hotmail.com', 'pc'),
