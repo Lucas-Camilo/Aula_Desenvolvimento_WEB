@@ -1,47 +1,47 @@
-﻿ DROP DATABASE IF EXISTS contatos;
+﻿  DROP DATABASE IF EXISTS contatos;
 
   DATABASE IF NOT EXISTS contatos;
 
- USE contatos;
+  USE contatos;
 
- CREATE TABLE usuario (
+  CREATE TABLE usuario (
   usuario varchar(08) NOT NULL PRIMARY KEY,
   senha varchar(60) NOT NULL,
   nome varchar(50) NOT NULL,
   cat varchar(02) NOT NULL
- ) ENGINE = MyISAM DEFAULT CHARSET = latin1;
+  ) ENGINE = MyISAM DEFAULT CHARSET = latin1;
 
- INSERT INTO
+  INSERT INTO
   usuario ('usuario', 'senha', 'nome', 'cat')
- VALUES
+  VALUES
   ('admin', SHA1('abc'), 'Administrador', '00'),
   ('usu01', SHA1('abc'), 'Usuário 01', '01');
 
- CREATE TABLE IF NOT EXISTS tipo(
+  CREATE TABLE IF NOT EXISTS tipo(
   idt varchar(2) NOT NULL,
   nomet varchar(30) NOT NULL,
   PRIMARY KEY (idt)
- ) DEFAULT CHARSET = latin1;
+  ) DEFAULT CHARSET = latin1;
 
- INSERT INTO
+  INSERT INTO
   tipo (idt, nomet)
- VALUES
+  VALUES
   ('cm', 'Comum'),
   ('pc', 'Parceiro'),
   ('fc', 'Funcionário');
 
- CREATE TABLE IF NOT EXISTS contato (
+  CREATE TABLE IF NOT EXISTS contato (
   idc BIGINT NOT NULL AUTO_INCREMENT,
   nomec varchar(60) NOT NULL,
   emailc varchar(60) NOT NULL,
   tipoc varchar(2) NOT NULL,
   PRIMARY KEY (idc),
   FOREIGN KEY (tipoc) REFERENCES tipo(idt) ON DELETE CASCADE
-) DEFAULT CHARSET = latin1;
+  ) DEFAULT CHARSET = latin1;
 
- INSERT INTO
+  INSERT INTO
   contato ('idc', 'nomec', 'emailc', 'tipoc')
- VALUES
+  VALUES
   (null, 'João', 'joao@gmail.com', 'cm'),
   (null, 'Maria', 'maria@hotmail.com', 'pc'),
   (null, 'Carlos', 'carlos@terra.com.br', 'cm'),
