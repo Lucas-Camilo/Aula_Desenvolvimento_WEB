@@ -10,7 +10,7 @@ if ($op == "") {
 include("vsessao.php");
 if ($op == "it") {
     print "<p align='center'>Novo Tipo</p>
-    <form method='post' action='mutipo.php?op=iit'>
+    <form method='post' action='mtipo.php?op=iit'>
     <p align='center'>
     <br>ID<input type='text' name='idt'
                 size='8'  maxglength='10'>
@@ -29,7 +29,7 @@ if ($op == "iit") {
         $mensagem .= "<br>Nome do tipo é obrigatório";
     }
     print $mensagem;
-    print "<br><a href='mutipo.php?op=it'>Voltar</a>";
+    print "<br><a href='mtipo.php?op=it'>Voltar</a>";
     $conec = conec::conecta_mysql("localhost", "root", "", "contatos");
     try {
         $conec->setAttribute(
