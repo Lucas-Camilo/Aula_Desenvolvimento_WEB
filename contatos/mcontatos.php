@@ -92,7 +92,7 @@ if($op=="lc")
             PDO::FETCH_ORI_FIRST
         );
         do {
-            $ous = new contatos($linha[0], $linha[1],$linha[2], $linha[3])
+            $ous = new contatos($linha[0], $linha[1],$linha[2], $linha[3]);
             print "<TR><TD>".$ous->getIdc()."</TD>".
                   "<TD>".$ous->getNomec()."</TD>".
                   "<TD>".$ous->getEmailc()."</TD>".
