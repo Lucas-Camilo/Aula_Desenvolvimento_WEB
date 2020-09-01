@@ -82,7 +82,7 @@ if($op=="lc")
         $sth = $conec->prepare("SELECT * FROM contato");
         $sth->execute();
         print "<table border='1'>
-        <tr><td>ID</td><td>Tipo</td</tr>";
+        <tr><td>ID</td><td>Nome</td><td>E-mail</td><td>tipo</td></tr>";
         if ($sth->rowCount() == 0) {
             print "<tr><td>Nada para Listar</td></tr>";
             exit;

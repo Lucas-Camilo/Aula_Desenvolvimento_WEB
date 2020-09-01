@@ -19,7 +19,7 @@
 
     print "<h2>Contatos</h2>
             <br> <a href='mcontatos.php?op=ic'>Novo </a>
-            <br> <a href='mcontatos.php?op=lc'>Novo </a>";
+            <br> <a href='mcontatos.php?op=lc'>Listar </a>";
     ?>
     <p align="center"><a href="index.php">Logoff</a></p>
 </body>
