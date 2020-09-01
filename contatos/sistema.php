@@ -19,7 +19,8 @@
 
     print "<h2>Contatos</h2>
             <br> <a href='mcontatos.php?op=ic'>Novo </a>
-            <br> <a href='mcontatos.php?op=lc'>Listar </a>";
+            <br> <a href='mcontatos.php?op=lc'>Listar</a>
+            <br> <a href='mcontatos.php?op=fc'>Filtar</a>";
     ?>
     <p align="center"><a href="index.php">Logoff</a></p>
 </body>
