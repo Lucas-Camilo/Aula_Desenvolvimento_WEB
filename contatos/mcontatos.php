@@ -71,3 +71,39 @@ if($op=="iic")
     }
     exit;
 }
+if($op=="lc")
+{
+    $conec = conec::conecta_mysql("localhost", "root", "", "contatos");
+    try {
+        $conec->setAttribute(
+            PDO::ATTR_ERRMODE,
+            PDO::ERRMODE_EXCEPTION
+        );
+        $sth = $conec->prepare("SELECT * FROM contato");
+        $sth->execute();
+        print "<table border='1'>
+        <tr><td>ID</td><td>Tipo</td</tr>";
+        if ($sth->rowCount() == 0) {
+            print "<tr><td>Nada para Listar</td></tr>";
+            exit;
+        }
+        $linha = $sth->fetch(
+            PDO::FETCH_NUM,
+            PDO::FETCH_ORI_FIRST
+        );
+        do {
+            $ous = new contatos($linha[0], $linha[1],$linha[2], $linha[3])
+            print "<TR><TD>".$ous->getIdc()."</TD>".
+                  "<TD>".$ous->getNomec()."</TD>".
+                  "<TD>".$ous->getEmailc()."</TD>".
+            "<TD>" . $ous->getTipoc() . "</TD></TR>";
+        } while ($linha = $sth->fetch(PDO::FETCH_NUM, PDO::FETCH_ORI_NEXT));
+        print "</TABLE><br><a
+        href='sistema.php'>Voltar</a>";
+    } catch (Exception $e) {
+        print "<br>Falha: Conntatos não listados" . $e->getMessage();
+        print "<br><a href='sistema.php'>Voltar</a>";
+        exit;
+    }
+    exit;
+}
