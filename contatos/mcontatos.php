@@ -62,7 +62,7 @@ if($op=="iic")
             $contato->getEmailc(),
             $contato->getTipoc()
         ));
-        print "<br> Tipo Incluido com sucesso
+        print "<br> Contato Incluido com sucesso
             <br><a href='sistema.php'>Voltar para Inserção de Contato</a>";
     } catch (Exception $e) {
         print "Erro" . $e->getMessage() .
