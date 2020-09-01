@@ -42,7 +42,7 @@ if ($op == "ic") {
 if($op=="iic")
 {
     $mensagem = "";
-    $contato = new contatos("", $_POST['nome'], $_POST['email'], $_POST['tipoc']);
+    $contato = new contatos(null, $_POST['nome'], $_POST['email'], $_POST['tipoc']);
     if ($contato->getNomec() == "" || $contato->getEmailc() == ""|| $contato->getTipoc() == "") {
         $mensagem .= "<br>Dados não preenchidos Corretamente";
         exit;
