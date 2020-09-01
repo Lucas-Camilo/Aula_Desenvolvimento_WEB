@@ -55,7 +55,7 @@ if($op=="iic")
             PDO::ATTR_ERRMODE,
             PDO::ERRMODE_EXCEPTION
         );
-        $sth = $conec->prepare("INSERT INTO contatosvalues(?, ?, ?, ?)");
+        $sth = $conec->prepare("INSERT INTO contatos values(?, ?, ?, ?)");
         $sth->execute(array(
             $contato->getIdc(),
             $contato->getNomec(),
