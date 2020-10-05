@@ -23,7 +23,7 @@
             if ("00".equals(session.getAttribute("sescat"))) 
             {
                 out.println("<H2>Área do Administrador</H2><br>");
-                out.println("<A href='musuario.jsp'>Manutenção de suários</A><br>");
+                out.println("<A href='musuario.jsp'>Manutenção de usuários</A><br>");
             } 
         %>
         <br><A href='index.html'>Logout</A>    
