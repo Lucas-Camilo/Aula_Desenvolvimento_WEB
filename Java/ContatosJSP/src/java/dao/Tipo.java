@@ -31,5 +31,13 @@ public class Tipo {
     {
         return nomet;
     }
+    public void setIdt(String v_idt)
+    {
+        this.idt = v_idt;
+    }
+    public void setNomet(String v_nomet)
+    {
+        this.nomet = v_nomet;
+    }
 
 }
